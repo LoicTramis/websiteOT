@@ -1,5 +1,8 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+export async function post({ request, platform }) {
+	const counter = platform.env.COUNTER.idFromName('A');
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
